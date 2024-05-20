@@ -1,0 +1,45 @@
+{
+  "name": "selenium-report-project",
+  "version": "1.0.0",
+  "description": "Selenium tests with Jest reporting",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "chromedriver": "^109.0.0",
+    "selenium-webdriver": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-html-reporter": "^3.4.1",
+    "jest-junit": "^13.0.0",
+    "jest-stare": "^1.16.0",
+    "jest-allure": "^0.1.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "reporters": [
+      "default",
+      ["jest-html-reporter", {
+        "pageTitle": "Test Report",
+        "outputPath": "./reports/test-report.html",
+        "includeFailureMsg": true,
+        "includeConsoleLog": true,
+        "sort": "executionTime"
+      }],
+      ["jest-junit", {
+        "outputDirectory": "./reports",
+        "outputName": "junit.xml"
+      }],
+      ["jest-stare", {
+        "resultDir": "reports",
+        "reportTitle": "Jest Stare Report",
+        "coverageLink": "../coverage/lcov-report/index.html",
+        "additionalResultsProcessors": ["jest-junit"]
+      }],
+      "jest-allure"
+    ],
+    "setupFilesAfterEnv": ["jest-allure/dist/setup"]
+  }
+}

@@ -1,0 +1,12 @@
+mkdir selenium-report-project
+cd selenium-report-project
+npm init -y
+
+
+npm install selenium-webdriver jest jest-html-reporter jest-junit jest-stare jest-allure
+npm install chromedriver
+
+npm install --save-dev jest-allure
+
+mkdir allure-results
+npx jest

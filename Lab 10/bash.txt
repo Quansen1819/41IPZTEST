@@ -1,0 +1,8 @@
+mkdir jest-pactum-tests
+cd jest-pactum-tests
+npm init -y
+
+npm install jest pactum --save-dev
+
+//запуск тесту 
+npx jest

@@ -1,0 +1,7 @@
+{
+  "pageTitle": "Test Report",
+  "outputPath": "./reports/test-report.html",
+  "includeFailureMsg": true,
+  "includeConsoleLog": true,
+  "sort": "executionTime"
+}
